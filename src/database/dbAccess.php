@@ -1,0 +1,18 @@
+<?php
+
+    require_once '../../config.php';
+    require_once '../model/product.php';
+    // Create connection
+    
+    function openConnection(){        
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+        
+        if($conn->connect_error){
+            die("Connection failed: " . $conn->connect_error);
+        }else{
+            
+        }
+    }
+        
+
+?>
