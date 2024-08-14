@@ -21,6 +21,79 @@
         </svg>
     </label>
 
+    <!-- Modal button -->
+    <button class="btn" onclick="add_product.showModal()">open modal</button>
+    <!-- Actual Modal -->
+    <dialog id="add_product" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div class="modal-action">
+                <form method="dialog">
+                    <label class="input input-bordered flex items-center gap-2">
+                        Serial Numer
+                        <input name="serial_number" type="text" class="grow" placeholder="123456789" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Name
+                        <input name="prod_name" type="text" class="grow" placeholder="Motor" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Manufacturer
+                        <input name="manufacturer" type="text" class="grow" placeholder="" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Model Compatibility
+                        <input name="model_comp" type="text" class="grow" placeholder="Universal" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Material
+                        <input name="material" type="text" class="grow" placeholder="" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Length
+                        <input name="length" type="number" inputmode="numeric" pattern="[0-9]*" class="grow" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Width
+                        <input name="width" type="number" class="grow" placeholder="Daisy" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Height
+                        <input name="height" type="number" class="grow" placeholder="Daisy" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Weight
+                        <input name="weight" type="number" class="grow" placeholder="Daisy" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Color
+                        <input name="color" type="text" class="grow" placeholder="Daisy" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Part Description
+                        <input name="description" type="text" class="grow" placeholder="Daisy" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Price
+                        <input name="price" type="number" class="grow" placeholder="Daisy" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Stock
+                        <input name="stock" type="tel" class="grow" placeholder="Daisy" />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2">
+                        Supplier
+                        <input name="supplierID" type="text" class="grow" placeholder="Daisy" />
+                    </label>
+                    <button class="btn btn-primary" hx-post="./controller/tableController.php"
+                        hx-target="#result">Submit</button>
+                    <button hx-get="./controller/tableController.php" class="close" hx-target="#table_body"
+                        onclick="add_product.close()">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <p id="result"></p>
 
     <!-- SPREADSHEET TABLE WITH ITEMS -->
     <div class=" m-12">
@@ -76,26 +149,7 @@
                     </tr>
                 </thead>
                 <tbody id="table_body">
-                    <tr>
-                        <th>1</th>
-                        <td>Cy Ganderton</td>
-                        <td>Quality Control Specialist</td>
-                        <td>Littel, Schaden and Vandervort</td>
-                        <td>Canada</td>
-                        <td>12/16/2020</td>
-                        <td>Blue</td>
-                        <th>1</th>
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <td>Hart Hagerty</td>
-                        <td>Desktop Support Technician</td>
-                        <td>Zemlak, Daniel and Leannon</td>
-                        <td>United States</td>
-                        <td>12/5/2020</td>
-                        <td>Purple</td>
-                        <th>2</th>
-                    </tr>
+
                 </tbody>
                 <tfoot>
                     <tr>

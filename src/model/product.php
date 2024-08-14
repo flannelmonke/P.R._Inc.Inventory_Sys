@@ -1,5 +1,6 @@
 <?php
 
+
 class Product
 {
 
@@ -16,7 +17,25 @@ class Product
     private string $part_description;
     private float $price;
     private int $stock;
-    public function __construct($product_id, $product_name, $manufacturer, $model_compatibility, $material, $length, $width, $height, $weight, $color, $part_description, $price, $stock)
+    private int $supplierID;
+
+    /**
+     * @param string $product_id
+     * @param string $product_name
+     * @param string $manufacturer
+     * @param string $model_compatibility
+     * @param string $material
+     * @param float $length
+     * @param float $width
+     * @param float $height
+     * @param float $weight
+     * @param string $color
+     * @param string $part_description
+     * @param float $price
+     * @param int $stock
+     * @param int $supplierID
+     */
+    public function __construct($product_id, $product_name, $manufacturer, $model_compatibility, $material, $length, $width, $height, $weight, $color, $part_description, $price, $stock, $supplierID)
     {
         $this->setProductId($product_id);
         $this->setProductName($product_name);
@@ -31,6 +50,21 @@ class Product
         $this->setPartDescription($part_description);
         $this->setPrice($price);
         $this->setStock($stock);
+        $this->setSupplierID($supplierID);
+    }
+
+    public function getSupplierID()
+    {
+        return $this->supplierID;
+    }
+
+    public function setSupplierID($supplierID)
+    {
+        if (is_null($supplierID)) {
+            $this->supplierID = 0;
+        } else {
+            $this->supplierID = $supplierID;
+        }
     }
 
     public function getProductId()
