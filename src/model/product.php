@@ -2,35 +2,35 @@
 
 class Product
 {
-    private $product_id;
-    private $product_name;
-    private $manufacturer;
-    private $model_compatibility;
-    private $material;
-    private $length;
-    private $width;
-    private $height;
-    private $weight;
-    private $color;
-    private $part_description;
-    private $price;
-    private $stock;
 
+    private string $product_id;
+    private string $product_name;
+    private string $manufacturer;
+    private string $model_compatibility;
+    private string $material;
+    private float $length;
+    private float $width;
+    private float $height;
+    private float $weight;
+    private string $color;
+    private string $part_description;
+    private float $price;
+    private int $stock;
     public function __construct($product_id, $product_name, $manufacturer, $model_compatibility, $material, $length, $width, $height, $weight, $color, $part_description, $price, $stock)
     {
-        $this->product_id = $product_id;
-        $this->product_name = $product_name;
-        $this->manufacturer = $manufacturer;
-        $this->model_compatibility = $model_compatibility;
-        $this->material = $material;
-        $this->length = $length;
-        $this->width = $width;
-        $this->height = $height;
-        $this->weight = $weight;
-        $this->color = $color;
-        $this->part_description = $part_description;
-        $this->price = $price;
-        $this->stock = $stock;
+        $this->setProductId($product_id);
+        $this->setProductName($product_name);
+        $this->setManufacturer($manufacturer);
+        $this->setModelCompatibility($model_compatibility);
+        $this->setMaterial($material);
+        $this->setLength($length);
+        $this->setWidth($width);
+        $this->setHeight($height);
+        $this->setWeight($weight);
+        $this->setColor($color);
+        $this->setPartDescription($part_description);
+        $this->setPrice($price);
+        $this->setStock($stock);
     }
 
     public function getProductId()
@@ -40,7 +40,11 @@ class Product
 
     public function setProductId($product_id)
     {
-        $this->product_id = $product_id;
+        if (is_null($product_id)) {
+            $this->product_id = '';
+        } else {
+            $this->product_id = $product_id;
+        }
     }
 
     public function getProductName()
@@ -50,7 +54,11 @@ class Product
 
     public function setProductName($product_name)
     {
-        $this->product_name = $product_name;
+        if (is_null($product_name)) {
+            $this->product_name = '';
+        } else {
+            $this->product_name = $product_name;
+        }
     }
 
     public function getManufacturer()
@@ -60,7 +68,11 @@ class Product
 
     public function setManufacturer($manufacturer)
     {
-        $this->manufacturer = $manufacturer;
+        if (is_null($manufacturer)) {
+            $this->manufacturer = '';
+        } else {
+            $this->manufacturer = $manufacturer;
+        }
     }
 
     public function getModelCompatibility()
@@ -70,7 +82,11 @@ class Product
 
     public function setModelCompatibility($model_compatibility)
     {
-        $this->model_compatibility = $model_compatibility;
+        if (is_null($model_compatibility)) {
+            $this->model_compatibility = '';
+        } else {
+            $this->model_compatibility = $model_compatibility;
+        }
     }
 
     public function getMaterial()
@@ -80,7 +96,11 @@ class Product
 
     public function setMaterial($material)
     {
-        $this->material = $material;
+        if (is_null($material)) {
+            $this->material = '';
+        } else {
+            $this->material = $material;
+        }
     }
 
     public function getLength()
@@ -90,7 +110,11 @@ class Product
 
     public function setLength($length)
     {
-        $this->length = $length;
+        if (is_null($length)) {
+            $this->length = 0;
+        } else {
+            $this->length = $length;
+        }
     }
 
     public function getWidth()
@@ -100,7 +124,11 @@ class Product
 
     public function setWidth($width)
     {
-        $this->width = $width;
+        if (is_null($width)) {
+            $this->width = 0;
+        } else {
+            $this->width = $width;
+        }
     }
 
     public function getHeight()
@@ -110,7 +138,11 @@ class Product
 
     public function setHeight($height)
     {
-        $this->height = $height;
+        if (is_null($height)) {
+            $this->height = 0;
+        } else {
+            $this->height = $height;
+        }
     }
 
     public function getWeight()
@@ -120,7 +152,11 @@ class Product
 
     public function setWeight($weight)
     {
-        $this->weight = $weight;
+        if (is_null($weight)) {
+            $this->weight = 0;
+        } else {
+            $this->weight = $weight;
+        }
     }
 
     public function getColor()
@@ -130,7 +166,11 @@ class Product
 
     public function setColor($color)
     {
-        $this->color = $color;
+        if (is_null($color)) {
+            $this->color = '';
+        } else {
+            $this->color = $color;
+        }
     }
 
     public function getPartDescription()
@@ -140,7 +180,11 @@ class Product
 
     public function setPartDescription($part_description)
     {
-        $this->part_description = $part_description;
+        if (is_null($part_description)) {
+            $this->part_description = '';
+        } else {
+            $this->part_description = $part_description;
+        }
     }
 
     public function getPrice()
@@ -150,7 +194,11 @@ class Product
 
     public function setPrice($price)
     {
-        $this->price = $price;
+        if (is_null($price)) {
+            $this->price = 0;
+        } else {
+            $this->price = $price;
+        }
     }
 
     public function getStock()
@@ -160,7 +208,11 @@ class Product
 
     public function setStock($stock)
     {
-        $this->stock = $stock;
+        if (is_null($stock)) {
+            $this->stock = 0;
+        } else {
+            $this->stock = $stock;
+        }
     }
 
     public function __toString()
