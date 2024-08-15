@@ -290,6 +290,9 @@ class Product
             "</td>
                 <td>" .
             $this->stock .
+            "</td>" .
+            "<td>" .
+            $this->supplierID .
             "</td>";
     }
 }
