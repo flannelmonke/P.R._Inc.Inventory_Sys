@@ -42,8 +42,6 @@ function addProduct(Product $product): string
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $placeholder = $product->getProductName();;
-
     $sql = "INSERT INTO Products VALUES ('" . $product->getProductId() . "','" . $product->getProductName() . "','" . $product->getManufacturer() . "','" . $product->getModelCompatibility() . "','" . $product->getMaterial() . "'," . $product->getLength() . "," . $product->getWidth() . "," . $product->getHeight() . "," . $product->getWeight() . ",'" . $product->getColor() . "','" . $product->getPartDescription() . "'," . $product->getPrice() . "," . $product->getStock() . "," . $product->getSupplierID() . ")";
 
     if ($conn->query($sql) == TRUE) {
@@ -52,4 +50,43 @@ function addProduct(Product $product): string
         return "Sorry bro, product was not added successfully<br>
         We totally got a error: " . $conn->error;
     }
+}
+
+/**
+ * @return String
+ * @param Array $product
+ */
+function updateProducts($products): string
+{
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    for ($i = 0; $i < count($products); $i++) {
+        $sql = "UPDATE Products SET 
+            Product_name = '" . $products[$i]->getProductName() . "',
+            Manufacturer = '" . $products[$i]->getManufacturer() . "',
+            Model_Compatibility = '" . $products[$i]->getModelCompatibility() . "',
+            Material = '" . $products[$i]->getMaterial() . "',
+            length = " . $products[$i]->getLength() . ",
+            width = " . $products[$i]->getWidth() . ",
+            height = " . $products[$i]->getHeight() . ",
+            weight = " . $products[$i]->getWeight() . ",
+            color = '" . $products[$i]->getColor() . "',
+            part_description = '" . $products[$i]->getPartDescription() . "',
+            price = " . $products[$i]->getPrice() . ",
+            stock = " . $products[$i]->getStock() . ",
+            SupplierID = " . $products[$i]->getSupplierID() . "
+            WHERE Product_id = '" . $products[$i]->getProductId() . "'";
+
+        if ($conn->query($sql) == TRUE) {
+            continue;
+        } else {
+            return "Sorry bro, product was not updated successfully<br>
+                We totally got a error: " . $conn->error;
+        }
+    }
+    return "All items saved!";
 }

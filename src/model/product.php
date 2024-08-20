@@ -252,47 +252,47 @@ class Product
     public function __toString()
     {
         return
-            "<td>" .
-            $this->product_id .
+            "<td>
+                <input data-column-name='product_id' class='fields w-full p-2 border-none resize-x max-w-xs' type='text' value='$this->product_id'>" .
             "</td>
-                <td>" .
-            $this->product_name .
+            <td>
+                <input data-column-name='product_name' class='fields w-full p-2 border-none resize-x max-w-xs' type='text' value='$this->product_name'>" .
             "</td>
-                <td>" .
-            $this->manufacturer .
+            <td>
+                <input data-column-name='manufacturer' class='fields w-full p-2 border-none resize-x max-w-xs' type='text' value='$this->manufacturer' name=''>" .
             "</td>
-                <td>" .
-            $this->model_compatibility .
+            <td>
+                <input data-column-name='model_compatibility' class='fields w-full p-2 border-none resize-x max-w-xs' type='text' value='$this->model_compatibility'>" .
             "</td>
-                <td>" .
-            $this->material .
+            <td>
+                <input data-column-name='material' class='fields w-full p-2 border-none resize-x max-w-xs' type='text' value='$this->material'>" .
             "</td>
-                <td>" .
-            $this->length .
+            <td>
+                <input data-column-name='length' class='fields w-full p-2 border-none resize-x max-w-xs' type='number' value='$this->length'" .
             "</td>
-                <td>" .
-            $this->width .
+            <td>
+                <input data-column-name='width' class='fields w-full p-2 border-none resize-x max-w-xs' type='number' value='$this->width'" .
             "</td>
-                <td>" .
-            $this->height .
+            <td>
+                <input data-column-name='height' class='fields w-full p-2 border-none resize-x max-w-xs' type='number' value='$this->height'>" .
             "</td>
-                <td>" .
-            $this->weight .
+            <td>
+                <input data-column-name='weight' class='fields w-full p-2 border-none resize-x max-w-xs' type='number' value='$this->weight'>" .
             "</td>
-                <td>" .
-            $this->color .
+            <td>
+                <input data-column-name='color' class='fields w-full p-2 border-none resize-x max-w-xs' type='text' value='$this->color'>" .
             "</td>
-                <td>" .
-            $this->part_description .
+            <td>
+                <input data-column-name='part_description' class='fields w-full p-2 border-none resize-x max-w-xs' type='text' value='$this->part_description'>" .
             "</td>
-                <td>" .
-            $this->price .
+            <td>
+                <input data-column-name='price' class='fields w-full p-2 border-none resize-x max-w-xs' type='number' value='$this->price'" .
             "</td>
-                <td>" .
-            $this->stock .
+            <td>
+                <input data-column-name='stock' class='fields w-full p-2 border-none resize-x max-w-xs' type='number' value='$this->stock'>" .
             "</td>" .
-            "<td>" .
-            $this->supplierID .
+            "<td>
+                <input data-column-name='supplierID' class='fields w-1 border-none' type='number' value='$this->supplierID'>" .
             "</td>";
     }
 }
