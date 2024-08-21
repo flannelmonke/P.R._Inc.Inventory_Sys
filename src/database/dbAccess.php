@@ -90,3 +90,25 @@ function updateProducts($products): string
     }
     return "All items saved!";
 }
+
+/**
+ * @return String
+ * @param String $product_id 
+ */
+function deleteRow($product_id): string
+{
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "DELETE FROM Products WHERE Product_id = '$product_id'";
+
+    if ($conn->query($sql) == TRUE) {
+        return "Product with ID $product_id has been deleted successfully.";
+    } else {
+        return "Sorry bro, product was not deleted successfully<br>
+        We totally got a error: " . $conn->error;
+    }
+}

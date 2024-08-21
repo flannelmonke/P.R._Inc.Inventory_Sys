@@ -2136,8 +2136,22 @@ details.collapse summary::-webkit-details-marker{
   padding: 1rem;
 }
 
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .text-center{
   text-align: center;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.font-bold{
+  font-weight: 700;
 }
 
 .opacity-70{

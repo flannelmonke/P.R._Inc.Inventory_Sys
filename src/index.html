@@ -8,7 +8,9 @@
     <script src="https://unpkg.com/htmx.org@2.0.2"
         integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
     <script defer src="./scripts/TrackEdits.js"></script>
+    <script defer src="./scripts/delete.js"></script>
     <link rel="shortcut icon" href="../assets/resources/icons/tabIcon.svg" type="image/x-icon">
     <title>Home</title>
 </head>
@@ -24,9 +26,8 @@
             </svg>
         </label>
     </div>
-    <!-- Modal button -->
+
     <button class="btn" onclick="add_product.showModal()">Add Product</button>
-    <!-- Actual Modal -->
     <dialog id="add_product" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
             <div class="modal-action">
@@ -98,7 +99,6 @@
 
     <span id="result"></span>
 
-    <!-- SPREADSHEET TABLE WITH ITEMS -->
     <div class=" m-12">
         <div class="overflow-x-auto">
             <form id="spreadsheetForm" action="">
@@ -208,6 +208,20 @@
             </form>
         </div>
     </div>
+
+    <dialog id="confirmDelete" class="modal">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">Are you sure?</h3>
+            <p id="confirmationText" class="py-4"></p>
+            <div class="modal-action">
+                <p id="deleteResult"></p>
+                <form method="dialog">
+                    <button type="button" id="sendDelete" class="btn">Confirm</button>
+                    <button onclick="closeConfirmation()" class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
 
     <!-- WIDGET THING THAT HAS NO FUNCTIONALITY YET -->
     <div class="fixed bottom-0 left-0 right-0 p-4 text-center shadow-md z-10">
