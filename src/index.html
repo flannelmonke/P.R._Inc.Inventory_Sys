@@ -28,75 +28,83 @@
     </div>
 
     <button class="btn" onclick="add_product.showModal()">Add Product</button>
-    <dialog id="add_product" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-            <div class="modal-action">
+    <dialog id="add_product" class="modal modal-bottom sm:modal-middle p-2">
+        <div class=" modal-box w-1/2 h-1/2">
+            <h3 class="text-lg font-bold">Please fill in the required fields</h3>
+            <div class=" p-3">
                 <form method="dialog">
-                    <label class="input input-bordered flex items-center gap-2">
-                        Serial Numer
-                        <input name="serial_number" type="text" class="grow" placeholder="123456789" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Name
-                        <input name="prod_name" type="text" class="grow" placeholder="Motor" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Manufacturer
-                        <input name="manufacturer" type="text" class="grow" placeholder="" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Model Compatibility
-                        <input name="model_comp" type="text" class="grow" placeholder="Universal" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Material
-                        <input name="material" type="text" class="grow" placeholder="" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Length
-                        <input name="length" type="number" inputmode="numeric" pattern="[0-9]*" class="grow" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Width
-                        <input name="width" type="number" class="grow" placeholder="Daisy" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Height
-                        <input name="height" type="number" class="grow" placeholder="Daisy" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Weight
-                        <input name="weight" type="number" class="grow" placeholder="Daisy" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Color
-                        <input name="color" type="text" class="grow" placeholder="Daisy" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Part Description
-                        <input name="description" type="text" class="grow" placeholder="Daisy" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Price
-                        <input name="price" type="number" class="grow" placeholder="Daisy" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Stock
-                        <input name="stock" type="tel" class="grow" placeholder="Daisy" />
-                    </label>
-                    <label class="input input-bordered flex items-center gap-2">
-                        Supplier
-                        <input name="supplierID" type="text" class="grow" placeholder="Daisy" />
-                    </label>
-                    <button class="btn btn-primary" hx-post="./controller/tableController.php"
-                        hx-target="#result">Submit</button>
-                    <button hx-get="./controller/tableController.php" class="close" hx-target="#table_body"
-                        onclick="add_product.close()">Close</button>
+                    <div class="flex-col max-w-xs">
+                        <div class="flex w-full flex-wrap">
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Serial Number
+                                <input name="serial_number" type="text" class="" placeholder="123456789" />
+                            </label>
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Name
+                                <input name="prod_name" type="text" class="grow" placeholder="Motor" />
+                            </label>
+                        </div>
+                        <div class="flex w-full flex-wrap">
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Manufacturer
+                                <input name="manufacturer" type="text" class="grow" placeholder="" />
+                            </label>
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Model Compatibility
+                                <input name="model_comp" type="text" class="grow" placeholder="Universal" />
+                            </label>
+                        </div>
+                        <div class="flex w-full flex-wrap">
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Material
+                                <input name="material" type="text" class="grow" placeholder="" />
+                            </label>
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Length
+                                <input name="length" type="number" inputmode="numeric" pattern="[0-9]*" class="grow" />
+                            </label>
+                        </div>
+                        <div class="flex w-full flex-wrap">
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Weight
+                                <input name="weight" type="number" class="grow" placeholder="Daisy" />
+                            </label>
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Color
+                                <input name="color" type="text" class="grow" placeholder="Daisy" />
+                            </label>
+                        </div>
+                        <div class="flex w-full flex-wrap">
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Part Description
+                                <input name="description" type="text" class="grow" placeholder="Daisy" />
+                            </label>
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Price
+                                <input name="price" type="number" class="grow" placeholder="Daisy" />
+                            </label>
+                        </div>
+                        <div class="flex w-full flex-wrap">
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Stock
+                                <input name="stock" type="tel" class="grow" placeholder="Daisy" />
+                            </label>
+                            <label class="input input-bordered flex items-center gap-2 w-full sm:w-1/2">
+                                Supplier
+                                <input name="supplierID" type="text" class="grow" placeholder="Daisy" />
+                            </label>
+                        </div>
+                        <div class="flex w-full justify-end gap-2">
+                            <button class="btn btn-primary" hx-post="./controller/tableController.php"
+                                hx-target="#result">Submit</button>
+                            <button hx-get="./controller/tableController.php" class="close btn" hx-target="#table_body"
+                                onclick="add_product.close()">Close</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </dialog>
-
     <span id="result"></span>
 
     <div class=" m-12">
